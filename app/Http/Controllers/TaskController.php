@@ -73,4 +73,15 @@ class TaskController extends Controller
        $task->delete();
        return response()->json(['message' => 'Task deleted'], 200);
    }
+
+    //task by status
+    public function showbystatus($status){
+        
+        $alltasks = Task::where('completed', $status)->get();
+        if ($alltasks->isEmpty()) {
+            return response()->json(['message' => 'No tasks available with the given criteria!'], 404);
+        } else {
+            return response()->json($alltasks, 200);
+        }
+   }
 }

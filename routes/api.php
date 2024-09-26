@@ -10,6 +10,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/tasks/{id}', [TaskController::class, 'update']);
     Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);
     Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/tasks/status/{status}', [TaskController::class, 'showbystatus']);
 });
 
 // Public routes
