@@ -19,7 +19,7 @@ This project is a simple RESTful API built using Laravel 11 for managing tasks i
 
 1. **Clone the repository**:
 
-	git clone [https://github.com/your-repo/todo-app.git](https://github.com/your-repo/todo-app.git)  
+	git clone https://github.com/priyansh157/todo-app.git
 cd todo-app ( from cmd or terminal go the downloaded todo app directory)
 
       2\.   **Install dependencies**:  
@@ -27,18 +27,18 @@ composer install
 
       3\.   **Set up your database credentials** in `.env`  
 	`DB_CONNECTION=mysql`  
-`DB_HOST=127.0.0.1`  
-`DB_PORT=3306`  
-`DB_DATABASE=todo_app`  
-`DB_USERNAME=root`  
-`DB_PASSWORD=`
+    `DB_HOST=127.0.0.1`  
+    `DB_PORT=3306`  
+    `DB_DATABASE=todo`  
+    `DB_USERNAME=root`  
+    `DB_PASSWORD=`
 
-  4\.    Make a database with the name todo\_app. 
+4\.    Make a database with the name todo. 
 
-    5\.     **Generate application key**:   
-	`php artisan key:generate`
+5\.     **Generate application key**:   
+`php artisan key:generate`
 
- 6\.     **Run the database migrations**:  
+6\.     **Run the database migrations**:  
 php artisan migrate
 
 7\.     **Install Sanctum**:  
@@ -54,7 +54,7 @@ php artisan serve
 ## **API Documentation**
 
 ### **Authentication Routes**
-
+Note:  http://your-domain=> is the url on which your application is running for example:http://127.0.0.1:8000
 * **Register**:  
   **Method**: `POST`  
   **URL**: `http://your-domain/api/register`  
@@ -74,7 +74,7 @@ php artisan serve
 }
 
 **Login**:  
-`POST /api/login`  
+`POST http://your-domain/api/login`  
 Body:
 
 {
@@ -99,7 +99,7 @@ Body:
 
 ### **1\. Get All Tasks**
 
-* **Endpoint: `/api/tasks`**  
+* **Endpoint: `http://your-domain/api/tasks`**  
 * **Method: `GET`**  
 * **Description: Fetches a list of all tasks.**  
 * **Request Body: None**  
@@ -107,7 +107,7 @@ Body:
 
   ### **2\. Get Task by ID**
 
-* **Endpoint: `/api/tasks/{id}`**  
+* **Endpoint: `http://your-domain/api/tasks/{id}`**  
 * **Method: `GET`**  
 * **Description: Fetches a specific task by its ID.**  
 * **Request Body: None**  
@@ -115,7 +115,7 @@ Body:
 
   ### **3\. Create a New Task**
 
-* **Endpoint: `/api/tasks`**  
+* **Endpoint: `http://your-domain/api/tasks`**  
 * **Method: `POST`**  
 * **Description: Creates a new task.**  
 * **Request Body (example):**
@@ -133,7 +133,7 @@ Body:
 
 ## **4\. Update an Existing Task**
 
-* **Endpoint**: `/api/tasks/{id}`  
+* **Endpoint**: `http://your-domain/api/tasks/{id}`  
 * **Method**: `PUT`  
 * **Description**: Updates a task.  
 * **Request Body** (example):
@@ -146,7 +146,7 @@ Body:
 
 ### **5\. Delete a Task**
 
-* **Endpoint**: `/api/tasks/{id}`  
+* **Endpoint**: `http://your-domain/api/tasks/{id}`  
 * **Method**: `DELETE`  
 * **Description**: Deletes a task by its ID.  
 * **Request Body**: None  
@@ -154,7 +154,7 @@ Body:
 
 **6\. All Task By status**
 
-* **Endpoint**: /tasks/status/{status}  
+* **Endpoint**: `http://your-domain/tasks/status/{status}` 
 * **Method**: `GET`  
 * **Description**: GET tasks by status (complete tasks and incomplete tasks).  
 * **Request Body**: None  
